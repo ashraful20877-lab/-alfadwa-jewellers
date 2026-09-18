@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AL FADWA JEWELLERS — مجوهرات الفدوى">
+  <title>AL FADWA JEWELLERS | مجوهرات الفدوى</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Noto+Kufi+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#090707; --panel:#120b0b; --panel2:#1b0e0e; --gold:#d8ad55;
+      --gold2:#f1d18a; --cream:#f7efe0; --muted:#b9a99b; --line:rgba(216,173,85,.25);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:radial-gradient(circle at 50% -10%,#351414 0,#090707 48%);color:var(--cream);font-family:"Noto Kufi Arabic",sans-serif}
+    a{color:inherit;text-decoration:none}
+    .nav{position:sticky;top:0;z-index:20;background:rgba(9,7,7,.86);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+    .navin{max-width:1180px;margin:auto;padding:12px 20px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .brand img{width:54px;height:54px;border-radius:50%;object-fit:cover;border:1px solid var(--line)}
+    .brandtext{line-height:1.15}.brandtext strong{display:block;font-family:"Cormorant Garamond",serif;letter-spacing:2px;font-size:22px;color:var(--gold2)}
+    .brandtext span{font-size:10px;letter-spacing:2px;color:var(--muted)}
+    .links{display:flex;gap:22px;font-size:13px;color:#ded2c4}.links a:hover{color:var(--gold2)}
+    .hero{min-height:78vh;display:grid;place-items:center;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(9,7,7,.95),rgba(9,7,7,.45),rgba(9,7,7,.9)),url("ring-1.jpeg") center/cover;filter:saturate(.7);opacity:.55}
+    .hero:after{content:"";position:absolute;inset:0;background:radial-gradient(circle at center,transparent 0,rgba(9,7,7,.75) 70%)}
+    .hero-content{position:relative;z-index:2;text-align:center;padding:70px 20px;max-width:900px}
+    .eyebrow{color:var(--gold);letter-spacing:4px;font-size:12px}
+    h1{font-family:"Cormorant Garamond",serif;font-size:clamp(54px,10vw,105px);line-height:.9;margin:18px 0;color:var(--gold2);letter-spacing:3px}
+    .arabic-title{font-size:clamp(22px,4vw,38px);font-weight:600;margin:0 0 15px}
+    .hero p{max-width:650px;margin:0 auto 30px;color:#d0c1b2;font-size:14px;line-height:2}
+    .buttons{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}
+    .btn{padding:13px 24px;border-radius:999px;border:1px solid var(--gold);font-size:13px;transition:.2s}
+    .btn.primary{background:linear-gradient(135deg,#c89439,#f1d18a);color:#120b0b;border:0;font-weight:700}
+    .btn:hover{transform:translateY(-2px)}
+    section{max-width:1180px;margin:auto;padding:80px 20px}
+    .section-head{text-align:center;margin-bottom:35px}.section-head h2{font-family:"Cormorant Garamond",serif;color:var(--gold2);font-size:48px;margin:0 0 5px}.section-head p{color:var(--muted);font-size:13px;margin:0}
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:linear-gradient(145deg,#1b1010,#0f0909);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:0 15px 45px rgba(0,0,0,.35)}
+    .card img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover}
+    .card-body{padding:16px}.card-body h3{margin:0;color:var(--gold2);font-size:15px}.card-body p{margin:6px 0 0;color:var(--muted);font-size:11px}
+    .about{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .about-logo{display:grid;place-items:center;background:linear-gradient(145deg,#071c1c,#0a1111);border:1px solid var(--line);border-radius:28px;padding:35px}
+    .about-logo img{width:min(100%,360px);border-radius:50%}
+    .about h2{font-family:"Cormorant Garamond",serif;color:var(--gold2);font-size:52px;margin:0 0 12px}
+    .about p{color:#c8b8aa;line-height:2;font-size:14px}
+    .contact{background:linear-gradient(145deg,#170b0b,#0d0808);border:1px solid var(--line);border-radius:28px;padding:35px}
+    .contact-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:25px}
+    .contact-item{border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center;background:rgba(255,255,255,.02)}
+    .icon{font-size:24px;margin-bottom:8px}.contact-item strong{display:block;color:var(--gold2);font-size:13px}.contact-item span{display:block;color:var(--muted);font-size:11px;margin-top:5px}
+    footer{border-top:1px solid var(--line);text-align:center;padding:30px 20px;color:#8e8177;font-size:11px}
+    .float{position:fixed;left:18px;bottom:18px;z-index:30;background:#20b958;color:white;padding:13px 18px;border-radius:999px;font-weight:700;font-size:12px;box-shadow:0 8px 25px rgba(0,0,0,.4)}
+    @media(max-width:800px){.links{display:none}.gallery{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.hero{min-height:72vh}}
+    @media(max-width:480px){.gallery{grid-template-columns:1fr}.brandtext strong{font-size:18px}section{padding:60px 15px}}
+  </style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="navin">
+      <a class="brand" href="#home">
+        <img src="logo.jpeg" alt="AL FADWA JEWELLERS logo">
+        <div class="brandtext"><strong>AL FADWA</strong><span>JEWELLERS</span></div>
+      </a>
+      <div class="links">
+        <a href="#home">الرئيسية</a><a href="#collection">المجموعة</a><a href="#about">عنّا</a><a href="#contact">تواصل معنا</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <div class="eyebrow">AL FADWA JEWELLERS</div>
+        <div class="arabic-title">مجوهرات الفدوى</div>
+        <h1>TIMELESS<br>BEAUTY</h1>
+        <p>قطع مجوهرات مختارة بعناية، بتفاصيل فاخرة ولمسة عربية أصيلة.</p>
+        <div class="buttons">
+          <a class="btn primary" href="#collection">استكشف المجموعة</a>
+          <a class="btn" href="https://wa.me/96897094116?text=مرحباً%20مجوهرات%20الفدوى،%20أرغب%20بالاستفسار%20عن%20المجوهرات">واتساب</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="collection">
+      <div class="section-head">
+        <h2>Our Collection</h2>
+        <p>مجموعة من الخواتم بتصاميم فاخرة</p>
+      </div>
+      <div class="gallery">
+        <article class="card"><img src="ring-1.jpeg" alt="خاتم فاخر"><div class="card-body"><h3>خاتم فاخر</h3><p>تفاصيل دقيقة ولمعة مميزة</p></div></article>
+        <article class="card"><img src="ring-2.jpeg" alt="خاتم مزخرف"><div class="card-body"><h3>خاتم مزخرف</h3><p>تصميم عربي أنيق</p></div></article>
+        <article class="card"><img src="ring-3.jpeg" alt="خاتم فاخر"><div class="card-body"><h3>خاتم فاخر</h3><p>لمسة كلاسيكية راقية</p></div></article>
+        <article class="card"><img src="ring-4.jpeg" alt="خاتم"><div class="card-body"><h3>تفاصيل من كل زاوية</h3><p>صور حقيقية للقطعة</p></div></article>
+        <article class="card"><img src="ring-5.jpeg" alt="خاتم مزخرف"><div class="card-body"><h3>تصميم مميز</h3><p>أناقة مستوحاة من التراث</p></div></article>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="about">
+        <div class="about-logo"><img src="logo.jpeg" alt="مجوهرات الفدوى"></div>
+        <div>
+          <div class="eyebrow">ESTABLISHED WITH ELEGANCE</div>
+          <h2>مجوهرات الفدوى</h2>
+          <p>نقدّم لكم تجربة مجوهرات تجمع بين الفخامة، التفاصيل الدقيقة، والطابع العربي الأصيل. تصفحوا المجموعة وتواصلوا معنا مباشرة عبر واتساب للاستفسار والطلب.</p>
+          <a class="btn primary" href="https://www.instagram.com/alfadwajew/" target="_blank" rel="noopener">تابعنا على Instagram</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact">
+        <div class="section-head" style="margin-bottom:0">
+          <h2>Contact</h2>
+          <p>يسعدنا تواصلكم معنا</p>
+        </div>
+        <div class="contact-grid">
+          <a class="contact-item" href="https://wa.me/96897094116" target="_blank" rel="noopener"><div class="icon">💬</div><strong>WhatsApp</strong><span>+968 9709 4116</span></a>
+          <a class="contact-item" href="https://www.instagram.com/alfadwajew/" target="_blank" rel="noopener"><div class="icon">◎</div><strong>Instagram</strong><span>@alfadwajew</span></a>
+          <a class="contact-item" href="https://www.google.com/maps?q=23.611029,58.496975" target="_blank" rel="noopener"><div class="icon">⌖</div><strong>Our Location</strong><span>Muscat, Oman</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <a class="float" href="https://wa.me/96897094116?text=مرحباً%20مجوهرات%20الفدوى" target="_blank" rel="noopener">واتساب 💬</a>
+  <footer>© <span id="year"></span> AL FADWA JEWELLERS — مجوهرات الفدوى</footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
