@@ -57,6 +57,19 @@
     .float{position:fixed;left:18px;bottom:18px;z-index:30;background:#20b958;color:white;padding:13px 18px;border-radius:999px;font-weight:700;font-size:12px;box-shadow:0 8px 25px rgba(0,0,0,.4)}
     @media(max-width:800px){.links{display:none}.gallery{grid-template-columns:repeat(2,1fr)}.about{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.hero{min-height:72vh}}
     @media(max-width:480px){.gallery{grid-template-columns:1fr}.brandtext strong{font-size:18px}section{padding:60px 15px}}
+  
+    .gallery-btn{display:block;width:100%;margin-top:10px;text-align:center;background:transparent;color:var(--gold2);border:1px solid var(--gold);padding:10px 12px;border-radius:999px;font-size:12px;font-weight:700;cursor:pointer}
+    .product-photo{cursor:pointer}
+    .modal{display:none;position:fixed;inset:0;z-index:100;background:rgba(0,0,0,.94);align-items:center;justify-content:center;padding:20px}
+    .modal.open{display:flex}
+    .modal-inner{width:min(92vw,700px);text-align:center;position:relative}
+    .modal-main{width:100%;max-height:78vh;object-fit:contain;border-radius:14px;border:1px solid var(--line)}
+    .modal-title{color:var(--gold2);margin:10px 0 8px;font-size:16px}
+    .modal-controls{display:flex;justify-content:center;gap:10px}
+    .modal-controls button{background:#1b1010;color:var(--cream);border:1px solid var(--gold);border-radius:999px;padding:9px 16px;font-size:14px}
+    .modal-close{position:absolute;top:-8px;right:-8px;width:42px;height:42px;border-radius:50%;background:#1b1010;color:var(--cream);border:1px solid var(--gold);font-size:24px;z-index:2}
+    .modal-count{color:var(--muted);font-size:12px;margin:8px 0}
+
   </style>
 </head>
 <body>
@@ -92,7 +105,16 @@
         <p>مجموعة من الخواتم بتصاميم فاخرة</p>
       </div>
       <div class="gallery">
-        <article class="card"><img src="ring-1.jpeg" alt="خاتم فاخر"><div class="card-body"><h3>خاتم فاخر</h3><p>تفاصيل دقيقة ولمعة مميزة</p><div class="price">17 ر.ع</div><a class="order-btn" href="https://wa.me/96897094116?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%AC%D9%88%D9%87%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%81%D8%AF%D9%88%D9%89%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%AE%D8%A7%D8%AA%D9%85%20%D9%81%D8%A7%D8%AE%D8%B1%20%D8%A8%D8%B3%D8%B9%D8%B1%2017%20%D8%B1.%D8%B9.%20%D8%B5%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%3A%20https%3A%2F%2Fashraful20877-lab.github.io%2F-alfadwa-jewellers%2Fring-1.jpeg" target="_blank" rel="noopener">اطلب عبر واتساب 💬</a></div></article>
+        <article class="card">
+          <img class="product-photo" src="ring-1.jpeg" alt="خاتم فاخر" onclick="openGallery(0)">
+          <div class="card-body">
+            <h3>خاتم فاخر</h3>
+            <p>تفاصيل دقيقة ولمعة مميزة</p>
+            <div class="price">17 ر.ع</div>
+            <button class="gallery-btn" type="button" onclick="openGallery(0)">شاهد جميع الصور 📸</button>
+            <a class="order-btn" href="https://wa.me/96897094116?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%AC%D9%88%D9%87%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%81%D8%AF%D9%88%D9%89%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%AE%D8%A7%D8%AA%D9%85%20%D9%81%D8%A7%D8%AE%D8%B1%20%D8%A8%D8%B3%D8%B9%D8%B1%2017%20%D8%B1.%D8%B9.%20%D8%A7%D9%84%D8%B5%D9%88%D8%B1%3A%20https%3A%2F%2Fashraful20877-lab.github.io%2F-alfadwa-jewellers%2Fring-1.jpeg%20%7C%20https%3A%2F%2Fashraful20877-lab.github.io%2F-alfadwa-jewellers%2Fring-1-view1.jpeg%20%7C%20https%3A%2F%2Fashraful20877-lab.github.io%2F-alfadwa-jewellers%2Fring-1-view2.jpeg%20%7C%20https%3A%2F%2Fashraful20877-lab.github.io%2F-alfadwa-jewellers%2Fring-1-view3.jpeg" target="_blank" rel="noopener">اطلب عبر واتساب 💬</a>
+          </div>
+        </article>
         <article class="card"><img src="ring-2.jpeg" alt="خاتم مزخرف"><div class="card-body"><h3>خاتم مزخرف</h3><p>تصميم عربي أنيق</p><div class="price">17 ر.ع</div><a class="order-btn" href="https://wa.me/96897094116?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%AC%D9%88%D9%87%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%81%D8%AF%D9%88%D9%89%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%AE%D8%A7%D8%AA%D9%85%20%D9%85%D8%B2%D8%AE%D8%B1%D9%81%20%D8%A8%D8%B3%D8%B9%D8%B1%2017%20%D8%B1.%D8%B9.%20%D8%B5%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%3A%20https%3A%2F%2Fashraful20877-lab.github.io%2F-alfadwa-jewellers%2Fring-2.jpeg" target="_blank" rel="noopener">اطلب عبر واتساب 💬</a></div></article>
         <article class="card"><img src="ring-3.jpeg" alt="خاتم فاخر"><div class="card-body"><h3>خاتم فاخر</h3><p>لمسة كلاسيكية راقية</p><div class="price">17 ر.ع</div><a class="order-btn" href="https://wa.me/96897094116?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%AC%D9%88%D9%87%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%81%D8%AF%D9%88%D9%89%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%AE%D8%A7%D8%AA%D9%85%20%D9%81%D8%A7%D8%AE%D8%B1%20%D8%A8%D8%B3%D8%B9%D8%B1%2017%20%D8%B1.%D8%B9.%20%D8%B5%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%3A%20https%3A%2F%2Fashraful20877-lab.github.io%2F-alfadwa-jewellers%2Fring-3.jpeg" target="_blank" rel="noopener">اطلب عبر واتساب 💬</a></div></article>
         <article class="card"><img src="ring-4.jpeg" alt="خاتم"><div class="card-body"><h3>تفاصيل من كل زاوية</h3><p>صور حقيقية للقطعة</p><div class="price">17 ر.ع</div><a class="order-btn" href="https://wa.me/96897094116?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D9%8B%20%D9%85%D8%AC%D9%88%D9%87%D8%B1%D8%A7%D8%AA%20%D8%A7%D9%84%D9%81%D8%AF%D9%88%D9%89%D8%8C%20%D8%A3%D8%B1%D8%BA%D8%A8%20%D8%A8%D8%B7%D9%84%D8%A8%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D9%85%D9%86%20%D9%83%D9%84%20%D8%B2%D8%A7%D9%88%D9%8A%D8%A9%20%D8%A8%D8%B3%D8%B9%D8%B1%2017%20%D8%B1.%D8%B9.%20%D8%B5%D9%88%D8%B1%D8%A9%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%3A%20https%3A%2F%2Fashraful20877-lab.github.io%2F-alfadwa-jewellers%2Fring-4.jpeg" target="_blank" rel="noopener">اطلب عبر واتساب 💬</a></div></article>
@@ -130,5 +152,33 @@
   <a class="float" href="https://wa.me/96897094116?text=مرحباً%20مجوهرات%20الفدوى" target="_blank" rel="noopener">واتساب 💬</a>
   <footer>© <span id="year"></span> AL FADWA JEWELLERS — مجوهرات الفدوى</footer>
   <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+
+  <div class="modal" id="photoModal" role="dialog" aria-modal="true" aria-label="صور المنتج">
+    <div class="modal-inner">
+      <button class="modal-close" type="button" onclick="closeGallery()" aria-label="Close">×</button>
+      <img class="modal-main" id="modalImage" src="" alt="صورة المنتج">
+      <div class="modal-title">خاتم فاخر — 17 ر.ع</div>
+      <div class="modal-count" id="modalCount"></div>
+      <div class="modal-controls">
+        <button type="button" onclick="prevPhoto()">‹ السابق</button>
+        <button type="button" onclick="nextPhoto()">التالي ›</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    const ring1Photos = ["ring-1.jpeg","ring-1-view1.jpeg","ring-1-view2.jpeg","ring-1-view3.jpeg"];
+    let galleryIndex = 0;
+    function openGallery(index){ galleryIndex=index; updateGallery(); document.getElementById("photoModal").classList.add("open"); document.body.style.overflow="hidden"; }
+    function closeGallery(){ document.getElementById("photoModal").classList.remove("open"); document.body.style.overflow=""; }
+    function updateGallery(){
+      document.getElementById("modalImage").src=ring1Photos[galleryIndex];
+      document.getElementById("modalCount").textContent=(galleryIndex+1)+" / "+ring1Photos.length;
+    }
+    function nextPhoto(){ galleryIndex=(galleryIndex+1)%ring1Photos.length; updateGallery(); }
+    function prevPhoto(){ galleryIndex=(galleryIndex-1+ring1Photos.length)%ring1Photos.length; updateGallery(); }
+    document.getElementById("photoModal").addEventListener("click", function(e){ if(e.target===this) closeGallery(); });
+    document.addEventListener("keydown", function(e){ if(e.key==="Escape") closeGallery(); if(e.key==="ArrowRight") nextPhoto(); if(e.key==="ArrowLeft") prevPhoto(); });
+  </script>
+
 </body>
 </html>
